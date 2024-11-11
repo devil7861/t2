@@ -53,7 +53,7 @@ public class UserController {
 		// 로그인 성공 시
 		User loginUser = userService.getUserById(user);
 		session.setAttribute("loggedInUser", loginUser);
-		return "view/home/index";
+		return "redirect:/index";
 
 	}
 
@@ -61,11 +61,9 @@ public class UserController {
 	public String logoutAction(HttpSession session) {
 		System.out.println("유저 로그아웃");
 		session.invalidate();
-
-		return "view/home/index";
+		return "redirect:/index";
 	}
 
-	// 15번 문서 URI 매핑 조금 이상한듯...?
 	@GetMapping("/user/userInfoModfiy")
 	public String userInfoModify() {
 		return "view/user/user/user_info_modify";
@@ -79,10 +77,10 @@ public class UserController {
 	public String userJoinMove() {
 		return "view/user/user/user_join_form";
 	}
-	
-	@PostMapping("user/userJoinAction")
+
+	@PostMapping("/user/userJoinAction")
 	public String userJoinAction() {
-		return "redirect:/";
+		return "view/home/index";
 	}
 
 	@PostMapping("/user/userJoinCheck")
@@ -90,7 +88,6 @@ public class UserController {
 	public ResponseError getUserJoinCheck(UserJoinInfo userJoinInfo) {
 		return userService.userJoinCheck(userJoinInfo);
 	}
-
 
 	public void userInfoDetailAction() {
 
@@ -122,6 +119,7 @@ public class UserController {
 	public void userFindPwAction() {
 
 	}
+
 	@GetMapping("/user/userNotLogIn")
 	public String userNotLogIn() {
 		return "view/user/user/not_login";
