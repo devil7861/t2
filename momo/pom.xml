@@ -104,16 +104,10 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
-			<!-- Maven Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version> <!-- Maven 3.5.4와 호환되는 버전 -->
-				<configuration>
-					<source>17</source> <!-- Java 17 버전 -->
-					<target>17</target>
-				</configuration>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.2.0</version>
 			</plugin>
 		</plugins>
 	</build>
