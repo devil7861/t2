@@ -47,7 +47,7 @@ public class WebConfig implements WebMvcConfigurer {
 		LoginCheckInterceptor loginCheckInterceptor = new LoginCheckInterceptor();
 		registry.addInterceptor(loginCheckInterceptor).addPathPatterns("/exam/**").addPathPatterns("/user/userMyPage")
 				.addPathPatterns("/score/**").addPathPatterns("/user/userInfoModfiy").addPathPatterns("/study/**")
-				.addPathPatterns("/admin/**").excludePathPatterns("/exam/examMain").excludePathPatterns("/admin/adminLoginMove");
+				.excludePathPatterns("/exam/examMain");
 
 	}
 
