@@ -42,7 +42,7 @@ public class AdminExamController {
 	private final CommonMapper commonMapper;
 	private final FilesUtils filesUtils;
 
-	// 이미지 업로드23
+	// 이미지 업로드
 	@PostMapping("/upload/image")
 	@ResponseBody
 	public String uploadImage(@RequestParam("file") MultipartFile file) {
