@@ -54,7 +54,7 @@ public class AdminExamController {
 		return jobDone;
 	}
 
-	// 이미지 업로드
+	// 이미지 업로드(업로드테스트문구)
 	@PostMapping("/upload/image")
 	@ResponseBody
 	public String uploadImage(@RequestParam("file") MultipartFile file) {
